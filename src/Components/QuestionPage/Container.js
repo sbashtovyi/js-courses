@@ -6,10 +6,11 @@ import { db } from '../../utils';
 import AppLoader from '../Loaders/AppLoader';
 import Component from './Component';
 
-const mapDispatchToProps = (dispatch) => ({
-  setAnswerSorting: () => {
-    // TODO: CODE FOR YOUR HOMEWORK HERE
-  }
+import {answerSortActions} from '../../modules/answerSort';
+
+
+const mapDispatchToProps = dispatch => ({
+  setAnswerSorting: e => dispatch(answerSortActions.setAnswerSort(e.target.value)),
 });
 
 const enhance = compose(
